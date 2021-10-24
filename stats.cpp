@@ -1,4 +1,5 @@
 #include "stats.h"
+#include <iostream>
 
 Statistics::ComputeStatistics(const std::vector<double>& computedStats)
  {
