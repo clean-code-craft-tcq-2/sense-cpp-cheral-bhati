@@ -14,5 +14,5 @@ namespace Statistics
     double max;
     double min;
 
-    }  
+    }; 
 }
