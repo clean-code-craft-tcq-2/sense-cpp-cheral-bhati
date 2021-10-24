@@ -1,7 +1,9 @@
 #include "stats.h"
 #include <iostream>
 
-Statistics::ComputeStatistics(const std::vector<double>& computedStats)
+namespace Statistics
+{
+ComputeStatistics(const std::vector<double>& computedStats)
  {
     //Implement statistics here
    
@@ -48,4 +50,5 @@ int main()
     s2.ReadValues();
     s2.DispValues();
     return 0;
+}
 }
