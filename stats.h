@@ -6,7 +6,7 @@ namespace Statistics
     {
 
     public:
-    ComputeStatistics(const std::vector<double>& v);
+    ComputeStatistics(const std::vector<double>& computedStats);
     double calcAvg();
     void ReadValues();
     void DispValues() const;
