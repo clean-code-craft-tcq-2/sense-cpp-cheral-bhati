@@ -1,54 +1,34 @@
 #include "stats.h"
-#include <iostream>
+#include <bits/stdc++.h>
 
-namespace Statistics
-{
-ComputeStatistics::ComputeStatistics(const std::vector<double>& v)
+Stats Statistics::ComputeStatistics(const std::vector<float>& v)
  {
     //Implement statistics here
-   
-    
-    computedStats.min = *std::min_element(v.begin(), v.end());
-    computedStats.max = *std::max_element(v.begin(), v.end());
-    computedStats.average = calcAvg();
-    
-
-}
-
-void ComputeStatistics::ReadValues()
-{
-    std::vector<double> temp;
-    std::cout << "Enter values separated by a space: ";
-    int Number;
-    for (int i = 0; i < 4; i++)
-    {
-        std::cin >> Number;
-        temp.push_back(Number);
-    }
-    v  = temp;
-}
-
-void ComputeStatistics::DispValues() const
-{
-     for(std::size_t i = 0; i < v.size(); i++)
-       std::cout << "Number " << i <<" = " << v.at(i) << std::endl;
-    std::cout << "Average: " << average << std::endl;
-    std::cout << "min, max: " << min << " , " << max << std::endl;
-}
-
-double ComputeStatistics::calcAvg()
-{
-    double sum = 0;
+    Stats computedStats;
+ 
+ if (v.empty())
+ {
+  computedStats.min = NAN;
+  computedStats.max = NAN;
+  computedStats.average = NAN;
+ }
+ 
+ else
+ {   
+    computedStats.min = *min_element(v.begin(), v.end());
+    computedStats.max = *max_element(v.begin(), v.end());
+ 
+     float sum = 0;
     for(int i = 0; i < v.size(); i++)
        sum += v.at(i);
-    return sum/v.size();
+    computedStats.average = sum/v.size();
+ }
+   
 }
 
 int main()
 {
     ComputeStatistics computedStats;
-    computedStats.ReadValues();
-    computedStats.DispValues();
     return 0;
 }
-}
+
