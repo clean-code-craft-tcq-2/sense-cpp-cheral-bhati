@@ -1,18 +1,15 @@
 #include <vector>
 
+struct Stats
+   {
+    float average;
+    float max;
+    float min;
+   };
+
 namespace Statistics
-{
-    class ComputeStatistics
     {
-
-    public:
-    ComputeStatistics(const std::vector<double>& computedStats);
-    double calcAvg();
-    void ReadValues();
-    void DispValues() const;
-    double average;
-    double max;
-    double min;
-
-    }; 
-}
+    Stats ComputeStatistics(const std::vector<float>& );
+    }
+    
+   
