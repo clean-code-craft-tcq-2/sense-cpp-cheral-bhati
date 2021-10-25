@@ -3,14 +3,14 @@
 
 namespace Statistics
 {
-ComputeStatistics::ComputeStatistics(const std::vector<double>& computedStats)
+ComputeStatistics::ComputeStatistics(const std::vector<double>& v)
  {
     //Implement statistics here
    
     
-    min = *std::min_element(computedStats .begin(), computedStats .end());
-    max = *std::max_element(computedStats .begin(), computedStats .end());
-    average = calcAvg();
+    computedStats.min = *std::min_element(v .begin(), v .end());
+    computedStats.max = *std::max_element(v .begin(), v .end());
+    computedStats.average = calcAvg();
     
 
 }
@@ -25,13 +25,13 @@ void ComputeStatistics::ReadValues()
         std::cin >> Number;
         temp.push_back(Number);
     }
-    computedStats  = temp;
+    v  = temp;
 }
 
 void ComputeStatistics::DispValues() const
 {
-     for(std::size_t i = 0; i < computedStats .size(); i++)
-       std::cout << "Number " << i <<" = " << computedStats .at(i) << std::endl;
+     for(std::size_t i = 0; i < v .size(); i++)
+       std::cout << "Number " << i <<" = " << v .at(i) << std::endl;
     std::cout << "Average: " << average << std::endl;
     std::cout << "min, max: " << min << " , " << max << std::endl;
 }
@@ -39,14 +39,14 @@ void ComputeStatistics::DispValues() const
 double ComputeStatistics::calcAvg()
 {
     double sum = 0;
-    for(int i = 0; i < computedStats .size(); i++)
-       sum += computedStats .at(i);
-    return sum/computedStats .size();
+    for(int i = 0; i < v .size(); i++)
+       sum += v .at(i);
+    return sum/v .size();
 }
 
 int main()
 {
-    ComputeStatistics s2;
+    ComputeStatistics computedStats;
     s2.ReadValues();
     s2.DispValues();
     return 0;
