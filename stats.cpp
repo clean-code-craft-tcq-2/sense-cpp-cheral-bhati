@@ -47,8 +47,8 @@ double ComputeStatistics::calcAvg()
 int main()
 {
     ComputeStatistics computedStats;
-    s2.ReadValues();
-    s2.DispValues();
+    computedStats.ReadValues();
+    computedStats.DispValues();
     return 0;
 }
 }
