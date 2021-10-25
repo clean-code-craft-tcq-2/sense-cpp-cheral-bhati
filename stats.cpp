@@ -8,8 +8,8 @@ ComputeStatistics::ComputeStatistics(const std::vector<double>& v)
     //Implement statistics here
    
     
-    computedStats.min = *std::min_element(v .begin(), v .end());
-    computedStats.max = *std::max_element(v .begin(), v .end());
+    computedStats.min = *std::min_element(v.begin(), v.end());
+    computedStats.max = *std::max_element(v.begin(), v.end());
     computedStats.average = calcAvg();
     
 
@@ -30,8 +30,8 @@ void ComputeStatistics::ReadValues()
 
 void ComputeStatistics::DispValues() const
 {
-     for(std::size_t i = 0; i < v .size(); i++)
-       std::cout << "Number " << i <<" = " << v .at(i) << std::endl;
+     for(std::size_t i = 0; i < v.size(); i++)
+       std::cout << "Number " << i <<" = " << v.at(i) << std::endl;
     std::cout << "Average: " << average << std::endl;
     std::cout << "min, max: " << min << " , " << max << std::endl;
 }
@@ -39,9 +39,9 @@ void ComputeStatistics::DispValues() const
 double ComputeStatistics::calcAvg()
 {
     double sum = 0;
-    for(int i = 0; i < v .size(); i++)
-       sum += v .at(i);
-    return sum/v .size();
+    for(int i = 0; i < v.size(); i++)
+       sum += v.at(i);
+    return sum/v.size();
 }
 
 int main()
