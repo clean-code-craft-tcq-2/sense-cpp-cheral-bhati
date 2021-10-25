@@ -3,7 +3,7 @@
 
 namespace Statistics
 {
-ComputeStatistics(const std::vector<double>& computedStats)
+ComputeStatistics::ComputeStatistics(const std::vector<double>& computedStats)
  {
     //Implement statistics here
    
