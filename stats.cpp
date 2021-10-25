@@ -11,6 +11,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& v)
   computedStats.min = NAN;
   computedStats.max = NAN;
   computedStats.average = NAN;
+  return computedStats;
  }
  
  else
@@ -22,13 +23,9 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& v)
     for(int i = 0; i < v.size(); i++)
        sum += v.at(i);
     computedStats.average = sum/v.size();
+  
+    return computedStats;
  }
    
-}
-
-int main()
-{
-    ComputeStatistics computedStats;
-    return 0;
 }
 
