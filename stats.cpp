@@ -26,7 +26,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& v)
   
     return computedStats;
  }
- 
+}
  void StatsAlerter::checkAndAlert( const std::vector<float>& v)
 {
     auto computedStats = Statistics::ComputeStatistics(v);
