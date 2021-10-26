@@ -26,6 +26,15 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& v)
   
     return computedStats;
  }
-   
+ 
+ void StatsAlerter::checkAndAlert( const std::vector<float>& v)
+{
+    auto computedStats = Statistics::ComputeStatistics(v);
+    if(computedStats.max > maxThreshold)
+    {
+        *(alerters[0]->emailAlertPtr) = {true};
+        *(alerters[0]->ledAlertPtr)   = {true};
+    }  
+ 
 }
 
